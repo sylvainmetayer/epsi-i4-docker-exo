@@ -1,9 +1,16 @@
 version: '3'
 services: 
   php: 
+    build: ./php-codepostal/
     image: php-codepostal
     ports: 
         - "8080:80"
     volumes:
         - "./php-codepostal/www:/var/www/html"
-    
+  db:
+    build: ./mysql-codepostal/
+    image: mysql-codepostal
+    ports: 
+        - "3306:3306"
+    environment:
+        - "MYSQL_ROOT_PASSWORD=root"
