@@ -1,0 +1,9 @@
+version: '3'
+services: 
+  php: 
+    image: php-codepostal
+    ports: 
+        - "8080:80"
+    volumes:
+        - "./php-codepostal/www:/var/www/html"
+    
